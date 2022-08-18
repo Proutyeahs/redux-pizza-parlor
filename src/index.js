@@ -8,6 +8,12 @@ import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
+const customerForm = (state = [], action) => {
+  if (action.type === 'USER_INFO') {
+    return [...state, action.payload]
+  }
+  return state;
+}
 
 const cart = (state = [], action) => {
     if (action.type === 'ADD_TO_CART') {
@@ -21,6 +27,7 @@ const cart = (state = [], action) => {
 
 const storeInstance = createStore(
     combineReducers({
+      customerForm,
       
     }),
     applyMiddleware(logger),
