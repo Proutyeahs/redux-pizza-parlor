@@ -48,6 +48,8 @@ function CustomerForm() {
             type: 'USER_INFO',
             payload: customer
         })
+        setCustomer({ name: '', streetAdress: '', city: '', zip: '', type: '' })
+        history.push('/checkout')
     }
 
     return (
