@@ -1,0 +1,12 @@
+.card {
+    height: 550px;
+    width: 420px;
+    border: solid 2px red;
+    margin: 15px;
+    padding: 8px;
+}
+
+img{
+    height: 40%;
+    width: auto;
+}

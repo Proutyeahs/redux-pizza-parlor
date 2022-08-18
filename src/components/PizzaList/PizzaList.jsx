@@ -1,13 +1,29 @@
 import PizzaItem from '../PizzaItem/PizzaItem.jsx';
+import {useSelector} from 'react-redux';
 
+
+import './PizzaList.css';
 
 function PizzaList () {
 
+    const pizzaList = useSelector((store)=> store.pizzaMenu);
+
+
     return (
-        <>
-        <h3>This is the Pizza List</h3>
-        <PizzaItem />
-        </>
+        
+        <div className="cardWrapper">
+
+
+       
+        {pizzaList.map(pizza=>{
+            return(
+                <PizzaItem 
+                pizza={pizza}
+                key={pizza.name}
+                />
+            )
+        })}
+        </div>
 
     )
 
