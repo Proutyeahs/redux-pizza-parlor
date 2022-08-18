@@ -29,7 +29,7 @@ function AdminPage() {
         console.log(adminList);
     return (
         <>
-        {/* <table>
+        <table>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -39,34 +39,28 @@ function AdminPage() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        test
-                    </td>
-                    <td>
-                        test
-                    </td>
-                    <td>
-                        test
-                    </td>
-                    <td>
-                        test
-                    </td>
-                </tr>
+                {adminList.map((entry) => {
+                    return(
+                        <tr key={entry.id}>
+                            <td>
+                            {entry.customer_name}
+                            </td>
+                            <td>
+                            {entry.time}
+                            </td>
+                            <td>
+                            {entry.type}
+                            </td>
+                            <td>
+                            ${entry.total}
+                            </td>
+                        </tr>
+                    )
+                })}
+                
             </tbody>
-        </table> */}
-        <ul>
-            {adminList.map((entry) => {
-                return (
-                <li key={entry.id}>
-                    {entry.customer_name} <></>
-                    {entry.time} <></>
-                    {entry.type} <></>
-                    {entry.total}
-                </li>
-                )
-            })}
-        </ul>
+        </table>
+        
         </>
     )
 }

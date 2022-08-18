@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import CartItem from '../CartItem/CartItem.jsx';
 
-function Checkout({cart}) {
+function Checkout() {
     const customer = useSelector(storeInstance => storeInstance.customerForm)
     const cart = useSelector(storeInstance => storeInstance.cart)
     const history = useHistory();
