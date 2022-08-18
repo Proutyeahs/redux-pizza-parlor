@@ -15,6 +15,16 @@ const customerForm = (state = [], action) => {
   return state;
 }
 
+const cart = (state = [], action) => {
+    if (action.type === 'ADD_TO_CART') {
+        return [...state, action.payload]
+    }
+    if (action.type === 'CLEAR_CART') {
+        return []
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
       customerForm,
