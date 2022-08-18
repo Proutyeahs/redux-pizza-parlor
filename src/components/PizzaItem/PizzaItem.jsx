@@ -8,9 +8,16 @@ function PizzaItem ({pizza}) {
 
     const handleAdd = (pizza) => {
         if (addButton === true){setAddButton(false);}
-        else if (addButton === false){setAddButton(true);}
         dispatch({
             type: 'ADD_PIZZA',
+            payload: pizza
+        })
+    }
+
+    const handleRemove = (pizza) => {
+        if (addButton === false){setAddButton(true);}
+        dispatch({
+            type: 'REMOVE_PIZZA',
             payload: pizza
         })
     }
@@ -24,8 +31,8 @@ function PizzaItem ({pizza}) {
            
             <h4>{pizza.price}</h4>
             
-            {addButton ? (<button onClick={() => {handleAdd({pizza})}}>Add</button>):
-            (<button onClick={() => {handleAdd({pizza})}}>Remove</button>)}
+            {addButton ? (<button onClick={() => {handleAdd(pizza)}}>Add</button>):
+            (<button onClick={() => {handleRemove(pizza)}}>Remove</button>)}
             
     
 
