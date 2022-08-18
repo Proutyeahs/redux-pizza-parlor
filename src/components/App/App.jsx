@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import PizzaList from '../PizzaList/PizzaList.jsx';
+import PizzaItem from '../PizzaItem/PizzaItem.jsx';
 
 function App() {
 
