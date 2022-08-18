@@ -8,7 +8,7 @@ import PizzaList from '../PizzaList/PizzaList.jsx';
 import PizzaItem from '../PizzaItem/PizzaItem.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import {useDispatch} from 'react-redux';
-import OrderItem from '../OrderItem/OrderItem'
+// import OrderItem from '../OrderItem/OrderItem'
 import Checkout from '../Checkout/Checkout'
 
 
@@ -39,10 +39,10 @@ function App() {
     <Router>
       <div className='App'>
         <Header />
-        
+
         {/* <img src='images/pizza_photo.png' />
         <p>Pizza is great.</p> */}
-        <OrderItem />
+        {/* <OrderItem /> */}
         <Route path={'/'}>
           <PizzaList />
         </Route>
