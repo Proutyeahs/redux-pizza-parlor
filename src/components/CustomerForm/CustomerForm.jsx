@@ -7,14 +7,11 @@ function CustomerForm() {
     const history = useHistory()
     let dispatch = useDispatch()
 
-    let [check, setCheck] = useState(false)
-
-    let [customer, setCustomer] = useState({ name: '', streetAdress: '', city: '', zip: '', type: '' })
+    let [customer, setCustomer] = useState({ name: '', streetAddress: '', city: '', zip: '', type: '' })
 
     const nameChange = (event) => {
         setCustomer({
             ...customer,
-
         })
     }
     const streetChange = (event) => {
@@ -48,7 +45,7 @@ function CustomerForm() {
             type: 'USER_INFO',
             payload: customer
         })
-        setCustomer({ name: '', streetAdress: '', city: '', zip: '', type: '' })
+        setCustomer({ name: '', streetAddress: '', city: '', zip: '', type: '' })
         history.push('/checkout')
     }
 
@@ -56,7 +53,7 @@ function CustomerForm() {
         <>
             <form onSubmit={(event) => addInfo(event)}>
                 <input value={customer.name} onChange={nameChange} type='text' placeholder="Name" />
-                <input value={customer.streetAdress} onChange={streetChange} type='text' placeholder="StreetAddress" />
+                <input value={customer.streetAddress} onChange={streetChange} type='text' placeholder="StreetAddress" />
                 <input value={customer.city} onChange={cityChange} type='text' placeholder="City" />
                 <input value={customer.zip} onChange={zipChange} type='text' placeholder="Zip" />
                 <div>

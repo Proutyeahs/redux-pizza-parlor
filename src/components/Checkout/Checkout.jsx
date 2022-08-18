@@ -1,23 +1,26 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 import axios from 'axios';
 
 import CartItem from '../CartItem/CartItem.jsx';
 
-function Checkout({cart}) {
+function Checkout() {
     const customer = useSelector(storeInstance => storeInstance.customerForm)
-    const cart = useSelector(storeInstance => storeInstance.cart)
+    const cart = [{pizza: 'Margherita', 
+        price: 19.99}] //useSelector(storeInstance => storeInstance.cart)
     const history = useHistory();
     const dispatch = useDispatch();
     console.log(cart);
+    // const localState = [thisCart, setThisCart] = useState([])
 
     const entireThing = {
-        customer: { //right-hand side: whatever the values in CustomerForm end up being
+        customer: { // left: DB table values | right: Form data values. Is this right?
             customer_name: customer.name,
-            street_address: streetaddress,
-            city: city,
-            zip: zip,
-            type: type },
+            street_address: customer.streetAddress,
+            city: customer.city,
+            zip: customer.zip,
+            type: customer.type },
         cart: {                     // pizza object comes from cart reducer, which comes from NEXT click on PizzaList
             pizzas: {               // one customer, n pizzas. Looks like the server POST loops through them? server.js:36
                 order_id: order_id,
@@ -38,12 +41,7 @@ function Checkout({cart}) {
                   })
                   history.push("/")
             })
-
-
         }
-
-    
-
 
     return (
         <div>
@@ -57,9 +55,9 @@ function Checkout({cart}) {
                 </thead>
                 <tbody>
                     <tr>
-                        {cart.map((cartItem) => {
+                        {cart.map((item) => {
                             return (
-                                <CartItem key={cartItem.id} item={cartItem}/>
+                                <CartItem key={item.id} item={item}/>
                             )
                         })}
                     </tr>
