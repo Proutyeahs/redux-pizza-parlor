@@ -12,12 +12,13 @@ function CustomerForm() {
     const nameChange = (event) => {
         setCustomer({
             ...customer,
+            name: event.target.value
         })
     }
     const streetChange = (event) => {
         setCustomer({
             ...customer,
-            name: event.target.value
+            streetAddress: event.target.value
         })
     }
     const cityChange = (event) => {
@@ -40,7 +41,7 @@ function CustomerForm() {
     }
 
     const addInfo = (event) => {
-        console.log(customer)
+        console.log('this', customer)
         dispatch({
             type: 'USER_INFO',
             payload: customer
@@ -56,10 +57,8 @@ function CustomerForm() {
                 <input value={customer.streetAddress} onChange={streetChange} type='text' placeholder="StreetAddress" />
                 <input value={customer.city} onChange={cityChange} type='text' placeholder="City" />
                 <input value={customer.zip} onChange={zipChange} type='text' placeholder="Zip" />
-                <div>
-                    <input value={customer.type} onChange={typeChange} type="checkbox" />Pick Up
-                    <input value={customer.type} onChange={typeChange} type="checkbox" />Delivery
-                </div>
+                <input value={'pickUp'} onChange={typeChange} type="checkbox" />Pick Up
+                <input value={'delivery'} onChange={typeChange} type="checkbox" />Delivery
                 <button type="submit">Next</button>
             </form>
         </>
