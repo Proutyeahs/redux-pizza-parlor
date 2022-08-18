@@ -27,7 +27,6 @@ const cart = (state = [], action) => {
         }
         const result = state.filter(isPizza)
         return result;
-    return state;
     } 
     else if (action.type === 'CLEAR_CART') {
         return []
