@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import AdminPage from '../AdminPage/AdminPage';
 
 import Header from '../Header/Header';
 import PizzaList from '../PizzaList/PizzaList.jsx';
