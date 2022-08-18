@@ -50,7 +50,7 @@ function App() {
           <CustomerForm />
         </Route>
         <Route path={'/checkout'}>
-          <Checkout />
+          {/* <Checkout /> */}
         </Route>
         <Route path={'/admin'} exact>
           <AdminPage />
