@@ -1,0 +1,14 @@
+thead {
+    background-color: lightgray;
+    
+}
+table {
+
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px;
+}
+
+thead, td, tr {
+    border: solid black 2px;
+}
