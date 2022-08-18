@@ -42,7 +42,7 @@ function App() {
         
         {/* <img src='images/pizza_photo.png' />
         <p>Pizza is great.</p> */}
-        <CartItem />
+        {/* <CartItem /> */}
         <Route path={'/'} exact>
           <PizzaList />
         </Route>
@@ -50,7 +50,7 @@ function App() {
           <CustomerForm />
         </Route>
         <Route path={'/checkout'}>
-          {/* <Checkout /> */}
+          <Checkout />
         </Route>
         <Route path={'/admin'} exact>
           <AdminPage />

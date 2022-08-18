@@ -14,21 +14,21 @@ function Checkout() {
     console.log(cart);
     // const localState = [thisCart, setThisCart] = useState([])
 
-    const entireThing = {
-        customer: { // left: DB table values | right: Form data values. Is this right?
-            customer_name: customer.name,
-            street_address: customer.streetAddress,
-            city: customer.city,
-            zip: customer.zip,
-            type: customer.type },
-        cart: {                     // pizza object comes from cart reducer, which comes from NEXT click on PizzaList
-            pizzas: {               // one customer, n pizzas. Looks like the server POST loops through them? server.js:36
-                order_id: order_id,
-                pizza_id: pizza_id,
-                quantity: quantity
-            }               
-        }
-    }
+    // const entireThing = {
+    //     customer: { // left: DB table values | right: Form data values. Is this right?
+    //         customer_name: customer.name,
+    //         street_address: customer.streetAddress,
+    //         city: customer.city,
+    //         zip: customer.zip,
+    //         type: customer.type },
+    //     cart: {                     // pizza object comes from cart reducer, which comes from NEXT click on PizzaList
+    //         pizzas: {               // one customer, n pizzas. Looks like the server POST loops through them? server.js:36
+    //             order_id: order_id,
+    //             pizza_id: pizza_id,
+    //             quantity: quantity
+    //         }               
+    //     }
+    // }
 
     const handleCheckout = () => {
         // 1. Add orders to admin table in DB ("line_item")
@@ -44,7 +44,7 @@ function Checkout() {
         }
 
     return (
-        <div>
+        <>
             <h2>Checkout</h2>
             <table>
                 <thead>
@@ -54,18 +54,16 @@ function Checkout() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
                         {cart.map((item) => {
                             return (
                                 <CartItem key={item.id} item={item}/>
                             )
                         })}
-                    </tr>
                 </tbody>
             </table>
             <button onClick={handleCheckout}>Checkout</button>
-        </div>
-    )
+        </>
+    );
 }
 
 export default Checkout;
