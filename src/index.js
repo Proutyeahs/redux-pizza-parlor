@@ -8,6 +8,7 @@ import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
+
 const pizzaMenu = (state = [], action) => {
     if(action.type==='SET_PIZZAS'){
         return action.payload
@@ -25,14 +26,25 @@ const cart = (state = [], action) => {
             }
         }
     return state;
-    } else { return state;}
+    } 
+    else if (action.type === 'CLEAR_CART') {
+        return []
+    }
+    else { return state;}
+
+const customerForm = (state = [], action) => {
+  if (action.type === 'USER_INFO') {
+    return [...state, action.payload]
+  }
+  return state;
 }
 
 const storeInstance = createStore(
     combineReducers({
+
         pizzaMenu,
-        cart
-      
+        cart,
+      customerForm,  
     }),
     applyMiddleware(logger),
   );

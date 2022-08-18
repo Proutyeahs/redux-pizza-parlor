@@ -1,12 +1,16 @@
 import React, {useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import AdminPage from '../AdminPage/AdminPage';
 import Header from '../Header/Header';
 import PizzaList from '../PizzaList/PizzaList.jsx';
 import PizzaItem from '../PizzaItem/PizzaItem.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import {useDispatch} from 'react-redux';
+import OrderItem from '../OrderItem/OrderItem'
+import Checkout from '../Checkout/Checkout'
+
 
 
 function App() {
@@ -31,15 +35,27 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <Router>
+      <div className='App'>
+        <Header />
+        <img src='images/pizza_photo.png' />
+        <p>Pizza is great.</p>
+        <OrderItem />
+        <Route path={'/'}>
+          <PizzaList />
+        </Route>
+        <Route path={'/form'}>
+          <CustomerForm />
+        </Route>
+        <Route path={'/checkout'}>
+          <Checkout />
+        </Route>
+        <Route path={'/admin'}>
+          <AdminPage />
+        </Route>
+      </div>
+    </Router>
 
-      <Header />
-
-      <CustomerForm />
-      
-      <PizzaList />
-  
-    </div>
   );
 }
 
