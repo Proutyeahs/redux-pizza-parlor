@@ -31,6 +31,7 @@ const cart = (state = [], action) => {
         return []
     }
     else { return state;}
+}
 
 const customerForm = (state = [], action) => {
   if (action.type === 'USER_INFO') {
@@ -44,7 +45,7 @@ const storeInstance = createStore(
 
         pizzaMenu,
         cart,
-      customerForm,  
+      customerForm  
     }),
     applyMiddleware(logger),
   );
