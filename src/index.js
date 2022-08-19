@@ -23,6 +23,9 @@ const total = (state = 0, action) => {
   else if (action.type === 'REMOVE_PRICE'){
     return Number(state) - Number(action.payload.price)
   }
+  else if (action.type === 'CLEAR_TOTAL'){
+    return 0;
+  }
   return state;
 }
 
