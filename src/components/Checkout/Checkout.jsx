@@ -36,6 +36,9 @@ function Checkout() {
                 dispatch({
                     type: 'CLEAR_CART',
                   })
+                dispatch({
+                    type: 'CLEAR_TOTAL',
+                })
                   history.push("/")
             })
         }
