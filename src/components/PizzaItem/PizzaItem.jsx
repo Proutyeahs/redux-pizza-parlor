@@ -1,6 +1,7 @@
 import './PizzaItem.css'
 import {useState} from 'react';
 import {useDispatch} from 'react-redux'
+import { Button } from '@material-ui/core';
 
 function PizzaItem ({pizza}) {
     const [addButton, setAddButton] = useState(true)
@@ -49,11 +50,9 @@ function PizzaItem ({pizza}) {
            
             <h4>{pizza.price}</h4>
             
-            {addButton ? (<button onClick={() => {handleAdd(pizza)}}>Add</button>):
-            (<button onClick={() => {handleRemove(pizza)}}>Remove</button>)}
+            {addButton ? (<Button onClick={() => {handleAdd(pizza)}}>Add</Button>):
+            (<Button onClick={() => {handleRemove(pizza)}}>Remove</Button>)}
             
-    
-
         </div>
     );
 }
