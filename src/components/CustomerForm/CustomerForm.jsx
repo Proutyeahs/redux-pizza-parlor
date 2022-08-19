@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
 function CustomerForm() {
 
@@ -60,7 +61,7 @@ function CustomerForm() {
                 <input value={customer.zip} onChange={zipChange} type='text' placeholder="Zip" />
                 <input value={'pickUp'} onChange={typeChange} type="checkbox" />Pick Up
                 <input value={'delivery'} onChange={typeChange} type="checkbox" />Delivery
-                <button type="submit">Next</button>
+                <Button type="submit" variant='outlined' color='primary'>Submit</Button>
             </form>
         </>
     )
