@@ -36,7 +36,7 @@ const cart = (state = [], action) => {
 
 const customerForm = (state = [], action) => {
   if (action.type === 'USER_INFO') {
-    return [...state, action.payload]
+    return action.payload;
   }
   return state;
 }
