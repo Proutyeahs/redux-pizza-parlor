@@ -11,7 +11,7 @@ function PizzaList () {
     const history = useHistory();
     const pizzaList = useSelector((store)=> store.pizzaMenu);
     const nextPage = () =>{
-        history.push('/CustomerForm')
+        history.push('/form')
 
     }
 
