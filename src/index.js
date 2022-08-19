@@ -32,8 +32,8 @@ const cart = (state = [], action) => {
     } else if(action.type==='REMOVE_PIZZA'){
 
         function isPizza(value){
-            // console.log('value is',value, 'payload is',action.payload);
-            return value !== action.payload  
+            console.log('value is',value, 'payload is',action.payload);
+            return value.id !== action.payload.id  
         }
         const result = state.filter(isPizza)
         return result;
@@ -51,13 +51,29 @@ const customerForm = (state = [], action) => {
   return state;
 }
 
+const checkoutItems = (state = [], action) => {
+  if (action.type === 'ADDPIZZA') {
+  return [...state, action.payload]
+}
+  else if(action.type==='REMOVEPIZZA'){
+
+  function isPizza(value){
+      return value !== action.payload  
+  }
+  const result = state.filter(isPizza)
+  return result;
+} 
+return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
 
         pizzaMenu,
         cart,
       customerForm,
-      total  
+      total,
+      checkoutItems  
     }),
     applyMiddleware(logger),
   );

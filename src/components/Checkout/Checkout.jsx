@@ -9,9 +9,11 @@ function Checkout() {
     const customer = useSelector(storeInstance => storeInstance.customerForm)
     const cart = useSelector(storeInstance => storeInstance.cart)
     const total = useSelector(storeInstance => storeInstance.total);
+    const checkoutItems = useSelector(storeInstance => storeInstance.checkoutItems);
     const history = useHistory();
     const dispatch = useDispatch();
     console.log(cart);
+    console.log(total);
     // const localState = [thisCart, setThisCart] = useState([])
 
     const entireThing = {
@@ -49,7 +51,7 @@ function Checkout() {
                     </tr>
                 </thead>
                 <tbody>
-                        {cart.map((item) => {
+                        {checkoutItems.map((item) => {
                             return (
                                 <CartItem key={item.id} item={item}/>
                             )
