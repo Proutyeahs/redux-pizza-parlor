@@ -8,11 +8,6 @@ import PizzaList from '../PizzaList/PizzaList.jsx';
 import PizzaItem from '../PizzaItem/PizzaItem.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import {useDispatch} from 'react-redux';
-<<<<<<< HEAD
-// import OrderItem from '../OrderItem/OrderItem'
-=======
-import CartItem from '../CartItem/CartItem'
->>>>>>> main
 import Checkout from '../Checkout/Checkout'
 
 
@@ -44,8 +39,6 @@ function App() {
       <div className='App'>
         <Header />
 
-        <Route path={'/'}>
-        <CartItem />
         <Route path={'/'} exact>
 
           <PizzaList />
@@ -54,6 +47,8 @@ function App() {
           <CustomerForm />
         </Route>
         <Route path={'/checkout'}>
+
+          <Checkout />
 
         </Route>
         <Route path={'/admin'} exact>

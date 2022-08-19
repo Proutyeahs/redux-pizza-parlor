@@ -7,8 +7,6 @@ function CustomerForm() {
     const history = useHistory()
     let dispatch = useDispatch()
 
-    let [check, setCheck] = useState(false)
-
     let [customer, setCustomer] = useState({ name: '', streetAddress: '', city: '', zip: '', type: '' })
 
     const nameChange = (event) => {
