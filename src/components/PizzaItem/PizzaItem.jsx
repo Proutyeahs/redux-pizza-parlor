@@ -10,11 +10,15 @@ function PizzaItem ({pizza}) {
         if (addButton === true){setAddButton(false);}
         dispatch({
             type: 'ADD_PIZZA',
-            payload: pizza
+            payload: {id:pizza.id, quantity:1}
         })
         dispatch({
             type: 'ADD_PRICE',
-            payload: {id:pizza.id, quantity:1}
+            payload: pizza
+        })
+        dispatch({
+            type: 'ADDPIZZA',
+            payload: pizza
         })
 
     }
@@ -23,10 +27,14 @@ function PizzaItem ({pizza}) {
         if (addButton === false){setAddButton(true);}
         dispatch({
             type: 'REMOVE_PIZZA',
-            payload: pizza
+            payload: {id:pizza.id, quantity:1}
         })
         dispatch({
             type: 'REMOVE_PRICE',
+            payload: pizza
+        })
+        dispatch({
+            type: 'REMOVEPIZZA',
             payload: pizza
         })
 

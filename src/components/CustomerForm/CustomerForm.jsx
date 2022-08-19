@@ -41,6 +41,7 @@ function CustomerForm() {
     }
 
     const addInfo = (event) => {
+        event.preventDefault();
         console.log('this', customer)
         dispatch({
             type: 'USER_INFO',

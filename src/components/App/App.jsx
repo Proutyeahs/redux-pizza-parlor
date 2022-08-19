@@ -39,8 +39,6 @@ function App() {
       <div className='App'>
         <Header />
 
-      
-
         <Route path={'/'} exact>
 
           <PizzaList />

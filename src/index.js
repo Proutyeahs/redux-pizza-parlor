@@ -32,8 +32,8 @@ const cart = (state = [], action) => {
     } else if(action.type==='REMOVE_PIZZA'){
 
         function isPizza(value){
-            // console.log('value is',value, 'payload is',action.payload);
-            return value !== action.payload  
+            console.log('value is',value, 'payload is',action.payload);
+            return value.id !== action.payload.id  
         }
         const result = state.filter(isPizza)
         return result;
@@ -46,9 +46,24 @@ const cart = (state = [], action) => {
 
 const customerForm = (state = [], action) => {
   if (action.type === 'USER_INFO') {
-    return [...state, action.payload]
+    return action.payload;
   }
   return state;
+}
+
+const checkoutItems = (state = [], action) => {
+  if (action.type === 'ADDPIZZA') {
+  return [...state, action.payload]
+}
+  else if(action.type==='REMOVEPIZZA'){
+
+  function isPizza(value){
+      return value !== action.payload  
+  }
+  const result = state.filter(isPizza)
+  return result;
+} 
+return state;
 }
 
 const storeInstance = createStore(
@@ -57,7 +72,8 @@ const storeInstance = createStore(
         pizzaMenu,
         cart,
       customerForm,
-      total  
+      total,
+      checkoutItems  
     }),
     applyMiddleware(logger),
   );
