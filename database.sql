@@ -10,7 +10,7 @@ CREATE TABLE "pizza" (
 
 INSERT INTO "pizza" ("name", "description", "price", "image_path")
 VALUES ('Tomato Soup','If you like pizza, but you hate the toppings, the cheese, and the crust, you''ll love this!',12.99,'images/tomatosoup.jpeg'),
-('Onomatopizza','We start with a WHOMP of dough, SPLAT some marinara on it, PLOP enough cheese on there to make a mouse PEEP. Top it off with some SIZZLING bacon, and BOOM there it is! We guarantee you''ll SMACK your lips.',14.99,'onomato.jpeg'),
+('Onomatopizza','We start with a WHOMP of dough, SPLAT some marinara on it, PLOP enough cheese on there to make a mouse PEEP. Top it off with some SIZZLING bacon, and BOOM there it is! We guarantee you''ll SMACK your lips.',14.99,'images/onomato.jpeg'),
 ('Pepperoni','Classic pizza with cheese and pepperoni. Baked with a traditional crust in our brick oven.',14.99,'images/Pepperoni-pizza.png'),
 ('Over the Rainbow','Taste the rainbow! One ingredient of each color: pepperoni, doritos, pineapple, olives, cheese, peppers and onion. Complimentary water served in a spray bottle to taste an actual rainbow.',19.99,'images/rainbow.jpeg'),
 ('Chinese Firedragon','Pepperoni, pineapple and banana peppers.',15.99,'images/firedragon.jpeg'),
