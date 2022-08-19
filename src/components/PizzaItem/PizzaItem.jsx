@@ -12,6 +12,11 @@ function PizzaItem ({pizza}) {
             type: 'ADD_PIZZA',
             payload: pizza
         })
+        dispatch({
+            type: 'ADD_PRICE',
+            payload: pizza
+        })
+
     }
 
     const handleRemove = (pizza) => {
@@ -20,6 +25,11 @@ function PizzaItem ({pizza}) {
             type: 'REMOVE_PIZZA',
             payload: pizza
         })
+        dispatch({
+            type: 'REMOVE_PRICE',
+            payload: pizza
+        })
+
     }
 
     return (
