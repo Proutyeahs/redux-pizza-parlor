@@ -1,7 +1,7 @@
 import PizzaItem from '../PizzaItem/PizzaItem.jsx';
 import {useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
-
+import { Button } from '@material-ui/core';
 
 
 import './PizzaList.css';
@@ -30,10 +30,10 @@ function PizzaList () {
             )
         })}
         <div className="floatingTotal">TOTAL: {totalPrice}</div>
-         <button 
+         <Button 
             className='nextButton'
             onClick={nextPage}
-            >Next Page</button>
+            >Next Page</Button>
         </div>
        
 
