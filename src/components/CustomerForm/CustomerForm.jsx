@@ -10,6 +10,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import TextField from '@material-ui/core/TextField';
+import './CustomerForm.css'
 
 function CustomerForm() {
 
@@ -119,18 +120,18 @@ function CustomerForm() {
 
     return (
         <>
-            <FormControl component="fieldset" onSubmit={(event) => addInfo(event)}>
-                <TextField id="standard-basic" value={customer.name} onChange={nameChange} type='text' placeholder="Name" />
-                <TextField id="standard-basic" value={customer.streetAddress} onChange={streetChange} type='text' placeholder="StreetAddress" />
-                <TextField id="standard-basic" value={customer.city} onChange={cityChange} type='text' placeholder="City" />
-                <TextField id="standard-basic" value={customer.zip} onChange={zipChange} type='text' placeholder="Zip" />
-                <FormLabel component="legend">Order Type</FormLabel>
-                <RadioGroup defaultValue="female" aria-label="gender" name="customized-radios">
+            <form className="move" onSubmit={(event) => addInfo(event)}>
+                <TextField value={customer.name} onChange={nameChange} type='text' placeholder="Name" />
+                <TextField value={customer.streetAddress} onChange={streetChange} type='text' placeholder="StreetAddress" />
+                <TextField value={customer.city} onChange={cityChange} type='text' placeholder="City" />
+                <TextField value={customer.zip} onChange={zipChange} type='text' placeholder="Zip" />
+                <FormLabel>Order Type</FormLabel>
+                <RadioGroup>
                     <FormControlLabel onChange={typeChange} value="Pick Up" control={<StyledRadio />} label="Pick Up" />
                     <FormControlLabel onChange={typeChange} value="Delivery" control={<StyledRadio />} label="Delivery" />
                 </RadioGroup>
                 <Button type="submit" variant='outlined' color='primary'>Submit</Button>
-            </FormControl>
+            </form>
         </>
     )
 }
