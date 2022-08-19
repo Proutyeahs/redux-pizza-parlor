@@ -66,6 +66,10 @@ const checkoutItems = (state = [], action) => {
   const result = state.filter(isPizza)
   return result;
 } 
+
+else if (action.type === 'CLEAR_CART') {
+  return []
+}
 return state;
 }
 
