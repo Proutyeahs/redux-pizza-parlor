@@ -20,12 +20,13 @@ const cart = (state = [], action) => {
     if(action.type==='ADD_PIZZA'){
         return [...state, action.payload];
     } else if(action.type==='REMOVE_PIZZA'){
-        for (let pizza of state){
-            if (pizza === action.payload){
-                state.pop(pizza);
-            }
+
+        function isPizza(value){
+            // console.log('value is',value, 'payload is',action.payload);
+            return value !== action.payload  
         }
-    return state;
+        const result = state.filter(isPizza)
+        return result;
     } 
     else if (action.type === 'CLEAR_CART') {
         return []

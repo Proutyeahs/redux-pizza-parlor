@@ -8,7 +8,6 @@ import PizzaList from '../PizzaList/PizzaList.jsx';
 import PizzaItem from '../PizzaItem/PizzaItem.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import {useDispatch} from 'react-redux';
-import CartItem from '../CartItem/CartItem'
 import Checkout from '../Checkout/Checkout'
 
 
@@ -39,18 +38,18 @@ function App() {
     <Router>
       <div className='App'>
         <Header />
-        
-        {/* <img src='images/pizza_photo.png' />
-        <p>Pizza is great.</p> */}
-        {/* <CartItem /> */}
+
         <Route path={'/'} exact>
+
           <PizzaList />
         </Route>
         <Route path={'/form'}>
           <CustomerForm />
         </Route>
         <Route path={'/checkout'}>
+
           <Checkout />
+
         </Route>
         <Route path={'/admin'} exact>
           <AdminPage />
