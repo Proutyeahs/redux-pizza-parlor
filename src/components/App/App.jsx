@@ -9,10 +9,10 @@ import PizzaItem from '../PizzaItem/PizzaItem.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import {useDispatch} from 'react-redux';
 
+
 // import OrderItem from '../OrderItem/OrderItem'
 
 import CartItem from '../CartItem/CartItem'
-
 import Checkout from '../Checkout/Checkout'
 
 
@@ -47,6 +47,7 @@ function App() {
         <Route path={'/'}>
         <CartItem />
         </Route>
+
         <Route path={'/'} exact>
 
           <PizzaList />
@@ -55,6 +56,8 @@ function App() {
           <CustomerForm />
         </Route>
         <Route path={'/checkout'}>
+
+          <Checkout />
 
         </Route>
         <Route path={'/admin'} exact>
