@@ -3,3 +3,15 @@
    display: flex;
    flex-wrap: wrap;
 }
+
+.nextButton {
+    position: fixed;
+    top: 35%;
+    left: 80%;
+}
+
+.floatingTotal {
+    position: fixed;
+    top: 30%;
+    left: 80%;
+}
