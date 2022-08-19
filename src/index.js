@@ -18,10 +18,10 @@ const pizzaMenu = (state = [], action) => {
 
 const total = (state = 0, action) => {
   if (action.type === 'ADD_PRICE'){
-    return Number(state) + Number(action.payload.price)
+    return (Number(state) + Number(action.payload.price)).toFixed(2);
   }
   else if (action.type === 'REMOVE_PRICE'){
-    return Number(state) - Number(action.payload.price)
+    return (Number(state) - Number(action.payload.price)).toFixed(2);
   }
   else if (action.type === 'CLEAR_TOTAL'){
     return 0;
