@@ -16,6 +16,16 @@ const pizzaMenu = (state = [], action) => {
     return state;
 }
 
+const total = (state = 0, action) => {
+  if (action.type === 'ADD_PRICE'){
+    return Number(state) + Number(action.payload.price)
+  }
+  else if (action.type === 'REMOVE_PRICE'){
+    return Number(state) - Number(action.payload.price)
+  }
+  return state;
+}
+
 const cart = (state = [], action) => {
     if(action.type==='ADD_PIZZA'){
         return [...state, action.payload];
@@ -46,7 +56,8 @@ const storeInstance = createStore(
 
         pizzaMenu,
         cart,
-      customerForm  
+      customerForm,
+      total  
     }),
     applyMiddleware(logger),
   );
