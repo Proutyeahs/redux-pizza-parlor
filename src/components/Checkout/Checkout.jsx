@@ -8,6 +8,7 @@ import CartItem from '../CartItem/CartItem.jsx';
 function Checkout() {
     const customer = useSelector(storeInstance => storeInstance.customerForm)
     const cart = useSelector(storeInstance => storeInstance.cart)
+    const total = useSelector(storeInstance => storeInstance.total);
     const history = useHistory();
     const dispatch = useDispatch();
     console.log(cart);
@@ -18,9 +19,9 @@ function Checkout() {
         street_address: customer.streetAddress,
         city: customer.city,
         zip: customer.zip,
-        total: cart.total,
+        total: total,
         type: customer.type,
-        pizzas: cart.pizzas,
+        pizzas: cart
     }
     
 

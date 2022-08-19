@@ -39,10 +39,6 @@ function App() {
       <div className='App'>
         <Header />
 
-        <Route path={'/'}>
-        <CartItem />
-        </Route>
-
         <Route path={'/'} exact>
 
           <PizzaList />
